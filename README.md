@@ -72,5 +72,5 @@ Full list of contributors can be found [here](https://github.com/TypistTech/sunn
 
 ## License
 
-[Sunny](https://github.com/TypistTech/sunny-purge-extra-urls-example) is licensed under the GPLv2 (or later) from the [Free Software Foundation](http://www.fsf.org/).
+[Sunny Purge Extra URLs Example](https://github.com/TypistTech/sunny-purge-extra-urls-example) is licensed under the GPLv2 (or later) from the [Free Software Foundation](http://www.fsf.org/).
 Please see [License File](LICENSE) for more information.
