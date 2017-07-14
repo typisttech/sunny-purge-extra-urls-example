@@ -2,7 +2,7 @@
 /**
  * Sunny Purge Extra URLs Example
  *
- * Example of purging extra urls by filters and strategy classes.
+ * Example of purging extra urls by filters and strategies.
  *
  * @package   SunnyPurgeExtraUrlsExample
  *
@@ -17,10 +17,9 @@ declare(strict_types=1);
 
 namespace TypistTech\SunnyPurgeExtraUrlsExample;
 
-use TypistTech\Sunny\Posts\RelatedUrls\Strategies\StrategyInterface;
-use WP_Post;
+use TypistTech\Sunny\Targets\Strategies\StrategyInterface;
 
-final class CustomStrategy implements StrategyInterface
+final class CustomTargetsStrategy implements StrategyInterface
 {
     /**
      * Key of the strategy.
@@ -29,22 +28,21 @@ final class CustomStrategy implements StrategyInterface
      */
     public function getKey(): string
     {
-        return 'custom-strategy';
+        return 'custom-related-urls-strategy';
     }
 
     /**
      * Locate related urls.
      *
-     * @param WP_Post $post The WP_Post object from which relationships are determined.
-     *
      * @return string[] The related urls of $post.
      */
-    public function locate(WP_Post $post): array
+    public function all(): array
     {
+        // You should make use of $post to determine these urls. Otherwise, use `targets` instead.
         // http and https are different!
         $related = [
-            'https://example.com/added-by-strategy-1',
-            'https://example.com/added-by-strategy-2',
+            'https://example.com/targets/added-by-strategy-1',
+            'https://example.com/targets/added-by-strategy-2',
         ];
 
         return array_values(array_filter($related));
