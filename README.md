@@ -5,7 +5,7 @@
 [![Hire Typist Tech](https://img.shields.io/badge/Hire-Typist%20Tech-ff69b4.svg)](https://www.typist.tech/contact/)
 
 
-This repository is an example of adding extra purge urls to [Sunny](https://wordpress.org/plugins/sunny/) by filters and strategy classes intended to facilitate communication with developers.
+This repository is an example of adding extra purge urls to [Sunny](https://wordpress.org/plugins/sunny/) by filters and strategies intended to facilitate communication with developers.
 
 **It is not stable and not intended for installation on production sites.**
 
@@ -15,20 +15,29 @@ Bug reports and pull requests are welcome.
 
 
 
+## Related Urls vs Targets
+
+**Related urls** change from case to case, determined by its `post`.
+
+**Targets** never change no matter which post caused the purge.
+
+Both `related urls` and `targets` can be filtered by filters and strategies. 
+
+
 ## Examples
 
-### Filter
+### Filters
 
-Adding extra urls by using the `sunny_post_related_urls` filter. 
+Adding extra urls by using the `sunny_post_related_urls` and `sunny_targets` filters. 
 
 See [sunny-purge-extra-urls-example.php](./sunny-purge-extra-urls-example.php)
 
-### Strategy class
+### Strategies
 
-1. Define a strategy class implementing `StrategyInterface`
+1. Define a strategy class implementing `TypistTech\Sunny\Targets\Strategies\StrategyInterface` or `TypistTech\Sunny\Posts\RelatedUrls\Strategies\StrategyInterface`
 2. Add the strategy instance into Sunny's container by using the `sunny_register` action. 
 
-See [sunny-purge-extra-urls-example.php](./sunny-purge-extra-urls-example.php) and [CustomStrategy.php](./CustomStrategy.php)
+See [sunny-purge-extra-urls-example.php](./sunny-purge-extra-urls-example.php), [CustomRelatedUrlsStrategy.php](./CustomRelatedUrlsStrategy.php) and  [CustomTargetsStrategy.php](./CustomTargetsStrategy.php)
 
 
 
